@@ -2,8 +2,10 @@
 * @file spec.js
 */
 
+// Require sample page object.
 var SamplePage = require('./pages/sample.page');
 
+// Used for non-angular apps
 browser.ignoreSynchronization = true;
 
 // For each spec file is recommended to have just one describe.

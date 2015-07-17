@@ -2,8 +2,10 @@
 * @file authentication.spec.js
 */
 
+// Require authentication page object.
 var AuthenticationPage = require('./pages/authentication.page');
 
+// Used for non-angular apps
 browser.ignoreSynchronization = true;
 
 // For each spec file is recommended to have just one describe.
