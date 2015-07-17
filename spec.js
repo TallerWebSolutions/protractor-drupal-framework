@@ -17,7 +17,7 @@ describe ('Drupal home page' , function () {
     SamplePage.get();
   });
 
-	it ('should use bluecheese theme', function () {
+	it ('uses \'bluecheese\' theme', function () {
     // Set the expected theme as a string to check that the correct drupal theme is been used.
 		SamplePage.checkDrupalTheme('bluecheese');
 	});
