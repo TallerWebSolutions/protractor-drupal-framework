@@ -7,7 +7,10 @@ exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
 
   // The test files are stored into the specs array, separated by comma.
-  specs: ['spec.js'],
+  specs: [
+    'spec.js',
+    'authentication.spec.js'
+  ],
 
   // Browser configuration.
   capabilities: {
@@ -16,5 +19,5 @@ exports.config = {
 
   // The url that will be used for the tests. With this you can call just the relative urls into the tests.
   // This is also good for running tests in different environments. To do this you just have to change the url here.
-  baseUrl: 'http://drupal.org',
+  baseUrl: 'http://drupal.org/',
 };
