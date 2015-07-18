@@ -2,7 +2,7 @@
  * @file task.scheduler.spec.js
  */
 
-// Require authentication and task scheduler page objects.
+// Require authentication, task scheduler and sample page objects.
 var AuthenticationPage = require('./pages/authentication.page');
 var TaskSchedulerPage = require('./pages/task.scheduler.page');
 var SamplePage = require('./pages/sample.page');
@@ -15,6 +15,7 @@ browser.ignoreSynchronization = true;
 describe ('Task scheduler', function() {
   // This is the pre-condition step of each test.
   beforeEach(function () {
+    AuthenticationPage.logout();
     // Change the below two arguments for your needs (admin user and password of your drupal site).
     // This is needed for cron exection.
     AuthenticationPage.login('user-here', 'password-here');
