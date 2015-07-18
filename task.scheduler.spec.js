@@ -16,9 +16,7 @@ describe ('Task scheduler', function() {
   // This is the pre-condition step of each test.
   beforeEach(function () {
     AuthenticationPage.logout();
-    // Change the below two arguments for your needs (admin user and password of your drupal site).
-    // This is needed for cron exection.
-    AuthenticationPage.login('user-here', 'password-here');
+    AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
   });
 	it ('run the cron', function () {
     TaskSchedulerPage.get();
