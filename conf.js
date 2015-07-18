@@ -6,6 +6,15 @@ exports.config = {
   // The selenium address where the selenium server will be running.
   seleniumAddress: 'http://localhost:4444/wd/hub',
 
+  // Parameters that can be used in the tests.
+  params: {
+    // Here is where you set the user credentials for tests usage.
+    admin: {
+      'user': 'user-here',
+      'password': 'password-here'
+    }
+  },
+
   // The test files are stored into the specs array, separated by comma.
   specs: [
     'spec.js',
