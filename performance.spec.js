@@ -20,7 +20,7 @@ describe ('Performance', function() {
     // This is needed for cache cleaning.
     AuthenticationPage.login('user-here', 'password-here');
   });
-	it ('clean all caches', function () {
+	it ('clear all caches', function () {
     PerformancePage.get();
   	PerformancePage.clearAllCaches();
     expect(SamplePage.body.getText()).toContain('Todos os caches foram limpos.');
