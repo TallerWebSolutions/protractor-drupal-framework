@@ -12,8 +12,7 @@ browser.ignoreSynchronization = true;
 // A describe may the the description of a functionality/feature or even a web page, like home page, contact page, etc. It depends on the team work agreement
 describe ('Authentication' , function () {
   it ('login', function () {
-    // To login two arguments are needed, user and password. You need to change the default values.
-		AuthenticationPage.login('user-here', 'password-here');
+		AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
     // Check that user is logged in.
     expect(AuthenticationPage.loggedIn.isPresent()).toBe(true);
 	});
