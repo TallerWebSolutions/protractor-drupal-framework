@@ -16,8 +16,6 @@ describe ('Performance', function() {
   // This is the pre-condition step of each test.
   beforeEach(function () {
     AuthenticationPage.logout();
-    // Change the below two arguments for your needs (admin user and password of your drupal site).
-    // This is needed for cache cleaning.
     AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
   });
 	it ('clear all caches', function () {
