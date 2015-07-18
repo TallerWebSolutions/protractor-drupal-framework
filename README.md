@@ -5,22 +5,22 @@ Pre-requisites:
 - NodeJS (greater than v0.10.0)
 - Java Development Kit (JDK) - for the selenium server
 
-* Setup:
+** Setup: **
 
-** To install protractor globally, use:
+* To install protractor globally, use: *
 
-```npm install -g protractor```
+`npm install -g protractor`
 
-** After installing protractor, you will need to updated the webdriver-manager. Use:
+* After installing protractor, you will need to updated the webdriver-manager. Use: *
 
-```webdriver-manager update```
+`webdriver-manager update`
 
-** To start the selenium server, use:
+* To start the selenium server, use: *
 
-```webdriver-manager start```
+`webdriver-manager start`
 
-* Running tests:
+** Running tests: **
 
-** For running the protractor tests execute the below command in the path where the protractor configuration file is located:
+* For running the protractor tests execute the below command in the path where the protractor configuration file is located: *
 
-```protractor conf.js```
+`protractor conf.js`
