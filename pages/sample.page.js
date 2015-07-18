@@ -5,8 +5,10 @@
 // This is a sample page file where you will find generic methods to use with drupal.
 var SamplePage = function () {
 
+	// Define sample attributes.
 	this.body = element(by.css('body'));
 
+	//Define sample methods.
   // The url argument is optional, if not set it just goes to the baseUrl defined in the conf.js file.
 	this.get = function (url) {
     if (typeof(url) != 'undefined') {
