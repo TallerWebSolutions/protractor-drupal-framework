@@ -20,7 +20,8 @@ exports.config = {
     'spec.js',
     'authentication.spec.js',
     'task.scheduler.spec.js',
-    'performance.spec.js'
+    'performance.spec.js',
+    'content.spec.js'
   ],
 
   // Browser configuration.
