@@ -24,3 +24,8 @@ describe ('Drupal home page' , function () {
 		AllPages.SamplePage.checkDrupalTheme('bluecheese');
 	});
 });
+
+require('./authentication.spec.js');
+require('./task.scheduler.spec.js');
+require('./performance.spec.js');
+require('./content.spec.js');

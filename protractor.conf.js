@@ -16,13 +16,7 @@ exports.config = {
   },
 
   // The test files are stored into the specs array, separated by comma.
-  specs: [
-    'spec.js',
-    'authentication.spec.js',
-    'task.scheduler.spec.js',
-    'performance.spec.js',
-    'content.spec.js'
-  ],
+  specs: ['spec.js'],
 
   // Browser configuration.
   capabilities: {
