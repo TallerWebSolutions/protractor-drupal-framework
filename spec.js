@@ -2,8 +2,8 @@
 * @file spec.js
 */
 
-// Require sample page object.
-var SamplePage = require('./pages/sample.page');
+// Require all page objects.
+var AllPages = require('./pages/all.page');
 
 // Used for non-angular apps
 browser.ignoreSynchronization = true;
@@ -16,11 +16,11 @@ describe ('Drupal home page' , function () {
     // In the get method of the sample page you can have two behaviors:
     // If no url is set you will go to the base url defined in the conf.js file.
     // Or you can set a relative url as a string, without slash. E.g.: 'user'.
-    SamplePage.get();
+    AllPages.SamplePage.get();
   });
 
 	it ('uses \'bluecheese\' theme', function () {
     // Set the expected theme as a string to check that the correct drupal theme is been used.
-		SamplePage.checkDrupalTheme('bluecheese');
+		AllPages.SamplePage.checkDrupalTheme('bluecheese');
 	});
 });

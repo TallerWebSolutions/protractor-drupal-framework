@@ -2,10 +2,8 @@
  * @file task.scheduler.spec.js
  */
 
-// Require authentication, task scheduler and sample page objects.
-var AuthenticationPage = require('./pages/authentication.page');
-var TaskSchedulerPage = require('./pages/task.scheduler.page');
-var SamplePage = require('./pages/sample.page');
+// Require all page objects.
+var AllPages = require('./pages/all.page');
 
 // Used for non-angular apps
 browser.ignoreSynchronization = true;
@@ -15,12 +13,12 @@ browser.ignoreSynchronization = true;
 describe ('Task scheduler', function() {
   // This is the pre-condition step of each test.
   beforeEach(function () {
-    AuthenticationPage.logout();
-    AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
+    AllPages.AuthenticationPage.logout();
+    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
   });
 	it ('run the cron', function () {
-    TaskSchedulerPage.get();
-  	TaskSchedulerPage.run();
-    expect(SamplePage.body.getText()).toContain('O cron foi executado com sucesso.');
+    AllPages.TaskSchedulerPage.get();
+  	AllPages.TaskSchedulerPage.run();
+    expect(AllPages.SamplePage.body.getText()).toContain('O cron foi executado com sucesso.');
   });
 });

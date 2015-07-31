@@ -2,10 +2,8 @@
 * @file content.spec.js
 */
 
-// Require content, authentication and sample page object.
-var ContentPage = require('./pages/content.page');
-var AuthenticationPage = require('./pages/authentication.page');
-var SamplePage = require('./pages/sample.page');
+// Require all page objects.
+var AllPages = require('./pages/all.page');
 
 // Used for non-angular apps
 browser.ignoreSynchronization = true;
@@ -15,14 +13,14 @@ browser.ignoreSynchronization = true;
 describe ('Content' , function () {
   // This is the pre-condition step of each test.
 	beforeEach(function () {
-    AuthenticationPage.logout();
-    AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
+    AllPages.AuthenticationPage.logout();
+    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
   });
 
 	it ('remove content', function () {
-    ContentPage.get();
+    AllPages.ContentPage.get();
     // To remove a content you have to change the content title below. The default content title is 'teste'.
-    ContentPage.remove('teste');
-    expect(SamplePage.body.getText()).toContain('foi apagado.');
+    AllPages.ContentPage.remove('teste');
+    expect(AllPages.SamplePage.body.getText()).toContain('foi apagado.');
 	});
 });

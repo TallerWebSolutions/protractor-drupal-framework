@@ -2,10 +2,8 @@
  * @file performance.spec.js
  */
 
-// Require authentication, performance and sample page objects.
-var AuthenticationPage = require('./pages/authentication.page');
-var PerformancePage = require('./pages/performance.page');
-var SamplePage = require('./pages/sample.page');
+// Require all page objects.
+var AllPages = require('./pages/all.page');
 
 // Used for non-angular apps
 browser.ignoreSynchronization = true;
@@ -15,12 +13,12 @@ browser.ignoreSynchronization = true;
 describe ('Performance', function() {
   // This is the pre-condition step of each test.
   beforeEach(function () {
-    AuthenticationPage.logout();
-    AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
+    AllPages.AuthenticationPage.logout();
+    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
   });
 	it ('clear all caches', function () {
-    PerformancePage.get();
-  	PerformancePage.clearAllCaches();
-    expect(SamplePage.body.getText()).toContain('Todos os caches foram limpos.');
+    AllPages.PerformancePage.get();
+  	AllPages.PerformancePage.clearAllCaches();
+    expect(AllPages.SamplePage.body.getText()).toContain('Todos os caches foram limpos.');
   });
 });
