@@ -5,9 +5,6 @@
 // Require all page objects.
 var AllPages = require('./pages/all.page');
 
-// Used for non-angular apps
-browser.ignoreSynchronization = true;
-
 // For each spec file is recommended to have just one describe.
 // A describe may the the description of a functionality/feature or even a web page, like home page, contact page, etc. It depends on the team work agreement
 describe ('Authentication' , function () {
