@@ -2,6 +2,8 @@
 * @file sample.page.js
 */
 
+var EC = protractor.ExpectedConditions;
+
 // This is a sample page file where you will find generic methods to use with drupal.
 var SamplePage = function () {
 
@@ -22,6 +24,11 @@ var SamplePage = function () {
   this.checkDrupalTheme = function (theme) {
     expect(browser.executeScript('return Drupal.settings.ajaxPageState.theme')).toEqual(theme);
   };
+
+	// Wait for a message in the html's body given a timeout
+	this.waitMessageToBeVisible = function (message, timeout) {
+		browser.wait(EC.visibilityOf(element(by.cssContainingText('body', message))), timeout);
+	};
 
 };
 
