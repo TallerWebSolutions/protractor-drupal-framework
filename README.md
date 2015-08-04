@@ -23,4 +23,4 @@ To start the selenium server, use:
 
 For running the protractor tests, execute the below command in the path where the protractor configuration file is located:
 
-`protractor conf.js`
+`protractor`
