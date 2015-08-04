@@ -14,8 +14,10 @@ describe ('Performance', function() {
     AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
   });
 	it ('clear all caches', function () {
+    var message = 'Todos os caches foram limpos.';
     AllPages.PerformancePage.get();
   	AllPages.PerformancePage.clearAllCaches();
-    expect(AllPages.SamplePage.body.getText()).toContain('Todos os caches foram limpos.');
+    AllPages.SamplePage.waitMessageToBeVisible(message, 5000);
+    expect(AllPages.SamplePage.body.getText()).toContain(message);
   });
 });

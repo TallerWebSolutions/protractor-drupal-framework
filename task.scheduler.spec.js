@@ -14,8 +14,10 @@ describe ('Task scheduler', function() {
     AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
   });
 	it ('run the cron', function () {
+    var message = 'O cron foi executado com sucesso.';
     AllPages.TaskSchedulerPage.get();
   	AllPages.TaskSchedulerPage.run();
-    expect(AllPages.SamplePage.body.getText()).toContain('O cron foi executado com sucesso.');
+    AllPages.SamplePage.waitMessageToBeVisible(message, 5000);
+    expect(AllPages.SamplePage.body.getText()).toContain(message);
   });
 });
