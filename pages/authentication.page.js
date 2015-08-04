@@ -2,8 +2,12 @@
 * @file authentication.page.js
 */
 
+var EC = protractor.ExpectedConditions;
+
 // This is a sample page file where you will find generic methods to use with drupal.
 var AuthenticationPage = function () {
+
+  var defaultTimeout = 5000;
 
   // Define authentication attributes.
   this.usernameField = element(by.css('input#edit-name'));
@@ -18,11 +22,11 @@ var AuthenticationPage = function () {
 
   this.login = function (user, password) {
     this.get();
-    browser.driver.sleep(100);
+    browser.wait(EC.visibilityOf(this.usernameField, defaultTimeout));
     this.usernameField.sendKeys(user);
-    browser.driver.sleep(100);
+    browser.wait(EC.visibilityOf(this.passwordField, defaultTimeout));
     this.passwordField.sendKeys(password);
-    browser.driver.sleep(100);
+    browser.wait(EC.visibilityOf(this.loginButton, defaultTimeout));
     this.loginButton.click();
   }
 
