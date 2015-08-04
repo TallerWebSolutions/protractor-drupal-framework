@@ -15,7 +15,6 @@ var TaskSchedulerPage = function () {
 
   this.run = function () {
   	this.runButton.click();
-  	browser.driver.sleep(3000);
   }
 
 };

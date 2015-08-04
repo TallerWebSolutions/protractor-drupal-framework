@@ -15,7 +15,6 @@ var PerformancePage = function () {
 
   this.clearAllCaches = function () {
   	this.clearAllCachesButton.click();
-  	browser.driver.sleep(3000);
   }
 
 };
