@@ -32,7 +32,6 @@ var AuthenticationPage = function () {
 
   this.logout = function () {
     browser.get('user/logout');
-    browser.driver.sleep(1000);
   }
 
 };
