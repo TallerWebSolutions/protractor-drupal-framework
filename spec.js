@@ -22,7 +22,7 @@ describe ('Drupal home page' , function () {
 	});
 });
 
-require('./authentication.spec.js');
-require('./task.scheduler.spec.js');
-require('./performance.spec.js');
-require('./content.spec.js');
+require('./specs/authentication.spec.js');
+require('./specs/task.scheduler.spec.js');
+require('./specs/performance.spec.js');
+require('./specs/content.spec.js');
