@@ -2,9 +2,10 @@
 * @file authentication.page.js
 */
 
+// Prefix for Expected Conditions.
 var EC = protractor.ExpectedConditions;
 
-// This is a sample page file where you will find generic methods to use with drupal.
+// This is an object used for authentication (login and logout).
 var AuthenticationPage = function () {
 
   var defaultTimeout = 5000;

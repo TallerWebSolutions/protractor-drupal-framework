@@ -16,6 +16,7 @@ exports.config = {
   },
 
   // The test files are stored into the specs array, separated by comma.
+  // In the TallerWay, we use only the spec.js file and we require all other tests into this file.
   specs: ['spec.js'],
 
   // Browser configuration.
@@ -27,7 +28,7 @@ exports.config = {
   // This is also good for running tests in different environments. To do this you just have to change the url here.
   baseUrl: 'http://drupal.org/',
 
-  // Here you will set things that have to happen before start testing.
+  // Here we set things that have to happen before start testing.
   onPrepare: function () {
     var SpecReporter = require('jasmine-spec-reporter');
     // add jasmine spec reporter
@@ -40,6 +41,8 @@ exports.config = {
 
     // Used for non-angular apps.
     browser.ignoreSynchronization = true;
+
+    // Used to define a default delay between actions.
     var origFn = browser.driver.controlFlow().execute;
 
     browser.driver.controlFlow().execute = function() {

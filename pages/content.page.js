@@ -2,6 +2,7 @@
 * @file content.page.js
 */
 
+// Prefix for Expected Conditions.
 var EC = protractor.ExpectedConditions;
 
 // This is an object used for mananing drupal contents.

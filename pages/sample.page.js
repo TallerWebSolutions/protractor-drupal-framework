@@ -2,6 +2,7 @@
 * @file sample.page.js
 */
 
+// Prefix for Expected Conditions.
 var EC = protractor.ExpectedConditions;
 
 // This is a sample page file where you will find generic methods to use with drupal.
