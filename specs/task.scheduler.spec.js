@@ -17,7 +17,7 @@ describe ('Task scheduler', function() {
     var message = 'O cron foi executado com sucesso.';
     AllPages.TaskSchedulerPage.get();
   	AllPages.TaskSchedulerPage.run();
-    AllPages.SamplePage.waitMessageToBeVisible(message, 5000);
+    AllPages.SamplePage.waitMessageToBeVisible(message);
     expect(AllPages.SamplePage.body.getText()).toContain(message);
   });
 });

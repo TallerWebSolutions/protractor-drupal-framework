@@ -27,8 +27,8 @@ var SamplePage = function () {
   };
 
 	// Wait for a message in the html's body given a timeout
-	this.waitMessageToBeVisible = function (message, timeout) {
-		browser.wait(EC.visibilityOf(element(by.cssContainingText('body', message))), timeout);
+	this.waitMessageToBeVisible = function (message) {
+		browser.wait(EC.visibilityOf(element(by.cssContainingText('body', message))), browser.params.timeoutDefault);
 	};
 
 };

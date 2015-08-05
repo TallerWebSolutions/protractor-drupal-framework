@@ -17,7 +17,7 @@ describe ('Performance', function() {
     var message = 'Todos os caches foram limpos.';
     AllPages.PerformancePage.get();
   	AllPages.PerformancePage.clearAllCaches();
-    AllPages.SamplePage.waitMessageToBeVisible(message, 5000);
+    AllPages.SamplePage.waitMessageToBeVisible(message);
     expect(AllPages.SamplePage.body.getText()).toContain(message);
   });
 });

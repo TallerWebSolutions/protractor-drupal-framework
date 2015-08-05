@@ -8,8 +8,6 @@ var EC = protractor.ExpectedConditions;
 // This is an object used for mananing drupal contents.
 var ContentPage = function () {
 
-	var defaultTimeout = 5000;
-
 	// Define content attributes.
 	this.titleField = element(by.css('#views-exposed-form-admin-views-node-system-1 #edit-title'));
   this.applyButton = element(by.css('#views-exposed-form-admin-views-node-system-1 #edit-submit-admin-views-node'));
@@ -20,16 +18,16 @@ var ContentPage = function () {
   };
 
   this.filter = function (contentTitle) {
-		browser.wait(EC.visibilityOf(this.titleField), defaultTimeout);
+		browser.wait(EC.visibilityOf(this.titleField), browser.params.timeoutDefault);
     this.titleField.sendKeys(contentTitle);
-    browser.wait(EC.visibilityOf(this.applyButton), defaultTimeout);
+    browser.wait(EC.visibilityOf(this.applyButton), browser.params.timeoutDefault);
     this.applyButton.click();
   };
 
   this.remove = function (title) {
 		var titleLink = element(by.cssContainingText('a', title));
     this.filter(title);
-		browser.wait(EC.visibilityOf(titleLink), defaultTimeout);
+		browser.wait(EC.visibilityOf(titleLink), browser.params.timeoutDefault);
     titleLink.click().then(function () {
       element(by.cssContainingText('.tabs a', 'Edit')).click().then(function () {
         element(by.css('#edit-delete')).click().then(function () {

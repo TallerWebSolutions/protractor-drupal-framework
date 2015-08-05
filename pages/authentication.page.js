@@ -8,8 +8,6 @@ var EC = protractor.ExpectedConditions;
 // This is an object used for authentication (login and logout).
 var AuthenticationPage = function () {
 
-  var defaultTimeout = 5000;
-
   // Define authentication attributes.
   this.usernameField = element(by.css('input#edit-name'));
   this.passwordField = element(by.css('input#edit-pass'));
@@ -23,11 +21,11 @@ var AuthenticationPage = function () {
 
   this.login = function (user, password) {
     this.get();
-    browser.wait(EC.visibilityOf(this.usernameField, defaultTimeout));
+    browser.wait(EC.visibilityOf(this.usernameField, browser.params.timeoutDefault));
     this.usernameField.sendKeys(user);
-    browser.wait(EC.visibilityOf(this.passwordField, defaultTimeout));
+    browser.wait(EC.visibilityOf(this.passwordField, browser.params.timeoutDefault));
     this.passwordField.sendKeys(password);
-    browser.wait(EC.visibilityOf(this.loginButton, defaultTimeout));
+    browser.wait(EC.visibilityOf(this.loginButton, browser.params.timeoutDefault));
     this.loginButton.click();
   }
 

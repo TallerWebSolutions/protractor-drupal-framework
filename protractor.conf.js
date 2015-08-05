@@ -12,7 +12,8 @@ exports.config = {
     admin: {
       'user': 'user-here',
       'password': 'password-here'
-    }
+    },
+    timeoutDefault: 5000
   },
 
   // The test files are stored into the specs array, separated by comma.
