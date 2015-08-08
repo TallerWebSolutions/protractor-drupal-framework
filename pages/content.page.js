@@ -27,14 +27,13 @@ var ContentPage = function () {
   this.remove = function (title) {
 		var titleLink = element(by.cssContainingText('a', title));
     this.filter(title);
-		browser.wait(EC.visibilityOf(titleLink), browser.params.timeoutDefault);
-    titleLink.click().then(function () {
-      element(by.cssContainingText('.tabs a', 'Edit')).click().then(function () {
-        element(by.css('#edit-delete')).click().then(function () {
-          element(by.css('#edit-submit')).click();
-        });
-      });
-    });
+    titleLink.click();
+		browser.wait(EC.visibilityOf(element(by.cssContainingText('.tabs a', 'Edit'))), browser.params.timeoutDefault);
+    element(by.cssContainingText('.tabs a', 'Edit')).click();
+		browser.wait(EC.visibilityOf(element(by.css('#edit-delete'))), browser.params.timeoutDefault);
+    element(by.css('#edit-delete')).click();
+		browser.wait(EC.visibilityOf(element(by.css('#edit-submit'))), browser.params.timeoutDefault);
+    element(by.css('#edit-submit')).click();
   };
 
 };
