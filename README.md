@@ -8,6 +8,7 @@ A test automation framework for Drupal apps, written using Protractor and the Pa
 **Setup:**
 
 To install node dependecies and Protractor globally, use:
+
 `npm install; npm install -g protractor`
 
 After installing Protractor, you will need to update the webdriver-manager. Use:
