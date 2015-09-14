@@ -15,9 +15,9 @@ var AuthenticationPage = function () {
   this.loggedIn = element(by.css('body.logged-in'));
 
   // Define authentication methods.
-	this.get = function () {
+  this.get = function () {
     browser.get('user');
-  };
+  }
 
   this.login = function (user, password) {
     this.get();
