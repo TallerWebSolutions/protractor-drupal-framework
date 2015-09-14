@@ -23,7 +23,4 @@ describe ('Drupal home page' , function () {
 });
 
 // Require all other spec files for execution.
-require('./specs/authentication.spec.js');
-require('./specs/task.scheduler.spec.js');
-require('./specs/performance.spec.js');
-require('./specs/content.spec.js');
+require('./specs/sample.spec.js');
