@@ -18,7 +18,7 @@ exports.config = {
 
   // The test files are stored into the specs array, separated by comma.
   // In the TallerWay, we use only the spec.js file and we require all other tests into this file.
-  specs: ['spec.js'],
+  specs: ['./specs/spec.js'],
 
   // Browser configuration.
   capabilities: {

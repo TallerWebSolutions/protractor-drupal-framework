@@ -3,7 +3,7 @@
 */
 
 // Require all page objects.
-var AllPages = require('./pages/all.page');
+var AllPages = require('../pages/all.page');
 
 // For each spec file is recommended to have just one describe.
 // A describe may the the description of a functionality/feature or even a web page, like home page, contact page, etc. It depends on the team work agreement
@@ -23,4 +23,4 @@ describe ('Drupal home page' , function () {
 });
 
 // Require all other spec files for execution.
-require('./specs/sample.spec.js');
+require('./sample.spec.js');
