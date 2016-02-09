@@ -2,14 +2,14 @@
 A test automation framework for Drupal apps, written using Protractor and the PageObjects pattern.
 
 **Pre-requisites:**
-- NodeJS (greater than v0.10.0)
+- NodeJS (v4.x.x+)
 - Java Development Kit (JDK) - for the selenium server
 
 **Setup:**
 
-To install node dependecies and Protractor globally, use:
+To install Protractor globally, use:
 
-`npm install; npm install -g protractor`
+`npm install -g protractor`
 
 After installing Protractor, you will need to update the webdriver-manager. Use:
 
