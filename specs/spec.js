@@ -2,7 +2,7 @@
 * @file spec.js
 */
 
-var AllPages = require('../pages/all.page');
+var AllPages = require('../pages/page-object-loader');
 
 describe ('Drupal home page' , function () {
 

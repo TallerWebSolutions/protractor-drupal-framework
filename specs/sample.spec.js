@@ -2,7 +2,7 @@
 * @file sample.spec.js
 */
 
-var AllPages = require('../pages/all.page');
+var AllPages = require('../pages/page-object-loader');
 
 describe ('Sample' , function () {
 
