@@ -19,7 +19,7 @@ To start the selenium server, use:
 
 `webdriver-manager start`
 
-The above step not necessary when running tests with Chrome or Firefox.
+The above step is not necessary when running tests with Chrome or Firefox.
 Take a look at the directConnection Protractor configuration.
 
 **Running tests:**
