@@ -17,8 +17,5 @@
   "author": {
     "name": "Walmyr",
     "url": "https://github.com/wlsf82"
-  },
-  "devDependencies": {
-    "jasmine-spec-reporter": "^2.4.0"
   }
 }
