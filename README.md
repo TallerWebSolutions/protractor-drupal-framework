@@ -24,3 +24,7 @@ To start the selenium server, use:
 For running the Protractor tests, execute the below command in the path where the Protractor configuration file is located:
 
 `protractor`
+
+To overwrite the Protractor's configurations you can run the below command:
+
+`protractor --baseUrl http://your-custom-url/ --params.admin.user=your-admin-user --params.admin.password=your-admin-password`
