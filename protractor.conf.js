@@ -6,14 +6,17 @@ exports.config = {
   // The selenium address where the selenium server will be running.
   seleniumAddress: 'http://localhost:4444/wd/hub',
 
+  // When running tests against chrome or firefox you can use the browser's webdriver directly.
+  // Remember, this configuration ignores the seleniumAddress configuration.
+  directConnect: true,
+
   // Parameters that can be used in the tests.
   params: {
     // Here is where you set the user credentials for tests usage.
     admin: {
       'user': 'user-here',
       'password': 'password-here'
-    },
-    timeoutDefault: 5000
+    }
   },
 
   // The test files are stored into the specs array, separated by comma.
@@ -25,11 +28,11 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  // The url that will be used for the tests. With this you can call just the relative urls into the tests.
+  // The base url used for the testing. With this you can call just the relative urls into the tests.
   // This is also good for running tests in different environments. To do this you just have to change the url here.
   baseUrl: 'http://drupal.org/',
 
-  // Here we set things that have to happen before start testing.
+  // Here we set things that needs to happen before start testing.
   onPrepare: function () {
     var SpecReporter = require('jasmine-spec-reporter');
     // add jasmine spec reporter
@@ -42,6 +45,9 @@ exports.config = {
 
     // Used for non-angular apps.
     browser.ignoreSynchronization = true;
+
+    // Maximize window before start testing.
+    browser.driver.manage().window().maximize();
 
     // Used to define a default delay between actions.
     var origFn = browser.driver.controlFlow().execute;
@@ -56,5 +62,11 @@ exports.config = {
 
       return origFn.apply(browser.driver.controlFlow(), args);
     };
+  },
+
+  jasmineNodeOpts: {
+    showColors: true,
+    includeStackTrace: true,
+    defaultTimeoutInterval: 999999
   }
 };
