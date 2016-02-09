@@ -18,4 +18,44 @@ describe ('Sample' , function () {
     expect(AllPages.AuthenticationPage.loggedIn.isPresent()).toBe(false);
   });
 
+  it('runs cron', function() {
+    // Arrange
+    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
+    AllPages.TaskSchedulerPage.get();
+
+    // Act
+    AllPages.TaskSchedulerPage.runButton.click();
+
+    // Assert
+    AllPages.SamplePage.checkSuccessMessage();
+  });
+
+  it('cleans cache', function() {
+    // Arrange
+    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
+    AllPages.PerformancePage.get();
+
+    // Act
+    AllPages.PerformancePage.clearAllCachesButton.click();
+
+    // Assert
+    AllPages.SamplePage.checkSuccessMessage();
+  });
+
+  it('delete content', function() {
+    // Arrange
+    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
+    AllPages.ContentPage.get();
+
+    // Act
+    AllPages.ContentPage.remove('test');
+
+    // Assert
+    AllPages.SamplePage.checkSuccessMessage();
+  });
+
+  afterEach(function() {
+    AllPages.AuthenticationPage.logout();
+  });
+
 });
