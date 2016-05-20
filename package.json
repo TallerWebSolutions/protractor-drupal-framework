@@ -12,10 +12,21 @@
     "type": "git",
     "url": "git+https://github.com/TallerWebSolutions/protractor-drupal-framework.git"
   },
-  "bugs": { "url": "https://github.com/TallerWebSolutions/protractor-drupal-framework/issues" },
-  "keywords": [ "drupal", "protractor", "page", "objects", "2e2" ],
+  "bugs": {
+    "url": "https://github.com/TallerWebSolutions/protractor-drupal-framework/issues"
+  },
+  "keywords": [
+    "drupal",
+    "protractor",
+    "page",
+    "objects",
+    "2e2"
+  ],
   "author": {
     "name": "Walmyr",
     "url": "https://github.com/wlsf82"
+  },
+  "dependencies": {
+    "jasmine-spec-reporter": "^2.4.0"
   }
 }

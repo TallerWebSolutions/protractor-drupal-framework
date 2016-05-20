@@ -1,8 +1,8 @@
 /**
-* @file content.page.js
-*/
+ * @file content.page.js
+ * This is an object used for mananing drupal contents.
+ */
 
-// This is an object used for mananing drupal contents.
 var ContentPage = function () {
 
 	this.titleField = element(by.css('#views-exposed-form-admin-views-node-system-1 #edit-title'));
@@ -14,10 +14,12 @@ var ContentPage = function () {
 		this.filter(title);
 
 		titleLink.click();
-		
+
+		browser.sleep(3000);
+
 		element(by.cssContainingText('.tabs a', 'Edit')).click();
-		element(by.css('#edit-delete')).click();
-		element(by.css('#edit-submit')).click();
+		element(by.id('edit-delete')).click();
+		element(by.id('edit-submit')).click();
 	}
 
 	this.filter = function (contentTitle) {
@@ -25,10 +27,10 @@ var ContentPage = function () {
 		this.applyButton.click();
 	}
 
-	this.get = function () {
+	this.visit = function () {
 		browser.get('/admin/content');
 	}
 
 };
 
-module.exports = new ContentPage();
+module.exports = ContentPage;

@@ -1,61 +1,67 @@
 /**
-* @file sample.spec.js
-*/
+ * @file sample.spec.js
+ */
 
-var AllPages = require('../pages/page-object-loader');
+var AuthenticationPage = require('../page-objects/authentication.page');
+var ContentPage = require('../page-objects/content.page');
+var GenericPage = require('../page-objects/generic.page');
+var PerformancePage = require('../page-objects/performance.page');
+var TaskSchedulerPage = require('../page-objects/task-scheduler.page');
 
-describe ('Sample' , function () {
+describe ('Sample test' , function () {
 
-  it('login', function () {
-    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
-    // Check that user is logged in.
-    expect(AllPages.AuthenticationPage.loggedIn.isPresent()).toBe(true);
+  var authenticationPage = new AuthenticationPage();
+  var contentPage = new ContentPage();
+  var genericPage = new GenericPage();
+  var performancePage = new PerformancePage();
+  var taskSchedulerPage = new TaskSchedulerPage();
+
+  beforeAll(function () {
+    authenticationPage.login(
+      browser.params.admin.user,
+      browser.params.admin.password
+    );
   });
 
-  it('logout', function () {
-    AllPages.AuthenticationPage.logout();
-    // Check that user is logged out.
-    expect(AllPages.AuthenticationPage.loggedIn.isPresent()).toBe(false);
+  beforeEach(function() {
+    genericPage.visit();
   });
 
-  it('runs cron', function() {
+  it('run cron', function() {
     // Arrange
-    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
-    AllPages.TaskSchedulerPage.get();
+    taskSchedulerPage.visit();
 
     // Act
-    AllPages.TaskSchedulerPage.runButton.click();
+    taskSchedulerPage.runButton.click();
 
     // Assert
-    AllPages.SamplePage.checkSuccessMessage();
+    expect(genericPage.successMessage.isDisplayed()).toBe(true);
   });
 
-  it('cleans cache', function() {
+  it('clear all caches', function() {
     // Arrange
-    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
-    AllPages.PerformancePage.get();
+    performancePage.visit();
 
     // Act
-    AllPages.PerformancePage.clearAllCachesButton.click();
+    performancePage.clearAllCachesButton.click();
 
     // Assert
-    AllPages.SamplePage.checkSuccessMessage();
+    expect(genericPage.successMessage.isDisplayed()).toBe(true);
   });
 
   it('delete content', function() {
     // Arrange
-    AllPages.AuthenticationPage.login(browser.params.admin.user, browser.params.admin.password);
-    AllPages.ContentPage.get();
+    contentPage.visit();
 
     // Act
-    AllPages.ContentPage.remove('test');
+    contentPage.remove('test');
 
     // Assert
-    AllPages.SamplePage.checkSuccessMessage();
+    expect(genericPage.successMessage.isDisplayed()).toBe(true);
   });
 
-  afterEach(function() {
-    AllPages.AuthenticationPage.logout();
+  afterAll(function() {
+    authenticationPage.logout();
   });
 
 });

@@ -1,6 +1,6 @@
 /**
-* @file conf.js
-*/
+ * @file protractor.conf.js
+ */
 
 exports.config = {
   // The selenium address where the selenium server will be running.
@@ -21,7 +21,7 @@ exports.config = {
 
   // The test files are stored into the specs array, separated by comma.
   // In the TallerWay, we use only the spec.js file and we require all other tests into this file.
-  specs: ['./specs/spec.js'],
+  specs: ['./specs/*.spec.js'],
 
   // Browser configuration.
   capabilities: {
